@@ -19,5 +19,11 @@ function randomParagraph(){
 
 randomParagraph();
 
-let randIndex = Math.floor(Math.random()* paragraphs.length);
-console.log(paragraphs[randIndex].split(""));
+function randomParagraph() {
+    // get the ramdom numbers
+    let randIndex = Math.floor(Math.random()* paragraphs.length);
+    paragraphs[randIndex].split("").forEach(span => {
+        let spanTag = `<span>${span}</span>`;
+        typingText.innerHTML += spanTag;
+    })
+}
