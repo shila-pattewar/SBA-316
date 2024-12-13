@@ -1,0 +1,1 @@
+const inputTextArea = document.querySelector(".input-text-area");
