@@ -29,6 +29,7 @@ body{
     max-height: 225px;
     overflow-y: auto;
     scrollbar-color: white skyblue;
+    margin-bottom: 20px;
 }
 
 hr{
@@ -37,11 +38,34 @@ hr{
     border: none;
 }
 
+.results{
+    display: flex;
+    justify-content: space-between;  
+}
 
-
-li{
-    display: inline-block;
-    justify-content: space-evenly;
+.results li{
+    list-style: none;
+   // display: flex;
     padding: 10px;
 
+}
+
+.results li span{
+    display: block;
+    margin-left: 10px;
+}
+
+.results li:not(:first-child){
+    border-left: solid 1px #ccc;
+    /* padding-left: 25px; */
+}
+
+.results li p{
+    font-size: 20px;
+    text-align: center;
+}
+
+button{
+    border: solid 1px #ccc;
+    border-radius: 10px;
 }
