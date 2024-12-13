@@ -24,7 +24,7 @@ body{
     border-radius: 10px;
 }
 
-.input-text-area{
+.inputTextArea{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     max-height: 225px;
     overflow-y: auto;
@@ -45,7 +45,7 @@ hr{
 
 .results li{
     list-style: none;
-   // display: flex;
+    /* display: flex; */
     padding: 10px;
 
 }
