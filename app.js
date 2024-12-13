@@ -35,7 +35,10 @@ function randomParagraph() {
 
 function initTyping(){
     const character = typingText.querySelectorAll("span");
-    console.log(character[0]);
+
+    //add each input char in new line as new word
+    let typedChar = inputField.value;
+    console.log(typedChar);
    
 }
 
