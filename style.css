@@ -6,21 +6,38 @@ body{
     background-color: skyblue;
     
 }
+
+
 .mainContainer{
-    border: solid 1px red; 
+    border: solid 1px skyblue; 
     border-radius: 10px;  
     background-color: white;
     box-shadow: 2px 0.1 #c3c3c3;
-    width: 800px;
-    height: 100vh;
+    width: 100vh;
     padding: 30px;
     font-size: 22px;
 }
 
+.mainContainer .content-box{
+    border:solid 1px skyblue;
+    padding: 15px 20px 0;
+    border-radius: 10px;
+}
+
 .input-text-area{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    max-height: 225px;
+    overflow-y: auto;
+    scrollbar-color: white skyblue;
 }
+
+hr{
+    height: 1px;
+    background-color: skyblue;
+    border: none;
+}
+
+
 
 li{
     display: inline-block;
