@@ -12,6 +12,7 @@ const paragraphs = [
     "Quisque volutpat dui ut auctor congue. Vivamus suscipit fringilla augue, ac gravida metus. Suspendisse potenti. Integer in elit nec nulla lobortis ullamcorper. Etiam vel scelerisque velit. Donec venenatis nisl ut eros faucibus, non condimentum turpis egestas." ];
 
 const typingText = document.querySelector(".inputTextArea")
+const inputField = document.querySelector(".mainContainer .input-field")
 
 function randomParagraph(){
     console.log(paragraphs[0]);
@@ -20,10 +21,13 @@ function randomParagraph(){
 randomParagraph();
 
 function randomParagraph() {
-    // get the ramdom numbers
+    // get the ramdom paragraphs
     let randIndex = Math.floor(Math.random()* paragraphs.length);
     paragraphs[randIndex].split("").forEach(span => {
         let spanTag = `<span>${span}</span>`;
         typingText.innerHTML += spanTag;
     })
+
+    document.addEventListener("keydown", () => inputField.focus());
+    document.addEventListener("click", () => inputField.focus());
 }
