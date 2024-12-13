@@ -12,7 +12,7 @@ const paragraphs = [
     "Quisque volutpat dui ut auctor congue. Vivamus suscipit fringilla augue, ac gravida metus. Suspendisse potenti. Integer in elit nec nulla lobortis ullamcorper. Etiam vel scelerisque velit. Donec venenatis nisl ut eros faucibus, non condimentum turpis egestas." ];
 
 const typingText = document.querySelector(".inputTextArea")
-const inputField = document.querySelector(".mainContainer .input-field")
+const inpuField = document.querySelector(".mainContainer .input-field")
 
 function randomParagraph(){
     console.log(paragraphs[0]);
@@ -29,17 +29,17 @@ function randomParagraph() {
     })
 
     // focus the input field on keydown or click
-    document.addEventListener("keydown", () => inputField.focus());
-    document.addEventListener("click", () => inputField.focus());
+    document.addEventListener("keydown", () => inpuField.focus());
+    document.addEventListener("click", () => inpuField.focus());
 }
 
 function initTyping(){
     const character = typingText.querySelectorAll("span");
 
     //add each input char in new line as new word
-    let typedChar = inputField.value;
+    let typedChar = inpuField.value.split("")[0];
     console.log(typedChar);
    
 }
 
-inputField.addEventListener("input", initTyping);
+inpuField.addEventListener("input", initTyping);
