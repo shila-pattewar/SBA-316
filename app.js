@@ -11,8 +11,6 @@ const paragraphs = [
     
     "Quisque volutpat dui ut auctor congue. Vivamus suscipit fringilla augue, ac gravida metus. Suspendisse potenti. Integer in elit nec nulla lobortis ullamcorper. Etiam vel scelerisque velit. Donec venenatis nisl ut eros faucibus, non condimentum turpis egestas." ];
 
-
-
 const typingText = document.querySelector(".inputTextArea")
 
 function randomParagraph(){
@@ -21,3 +19,4 @@ function randomParagraph(){
 
 randomParagraph();
 
+let randIndex = Math.floor(Math.random()* paragraphs.length);
