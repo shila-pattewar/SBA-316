@@ -31,3 +31,5 @@ function randomParagraph() {
     document.addEventListener("keydown", () => inputField.focus());
     document.addEventListener("click", () => inputField.focus());
 }
+
+inputField.addEventListener("input", initTyping);
