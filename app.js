@@ -13,6 +13,7 @@ const paragraphs = [
 
 const typingText = document.querySelector(".inputTextArea")
 const inpuField = document.querySelector(".mainContainer .input-field")
+let charIndex = 0;
 
 function randomParagraph(){
     console.log(paragraphs[0]);
@@ -37,9 +38,15 @@ function initTyping(){
     const character = typingText.querySelectorAll("span");
 
     //add each input char in new line as new word
-    let typedChar = inpuField.value.split("")[0];
+    let typedChar = inpuField.value.split("")[charIndex];
     console.log(typedChar);
-   
+    //to check the typed character is matches with original one
+   if (character[charIndex].innerText === typedChar){
+    console.log("ture");
+   }else{
+    console.log("flase");
+   }
+   charIndex++;
 }
 
 inpuField.addEventListener("input", initTyping);
