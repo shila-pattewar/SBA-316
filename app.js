@@ -28,8 +28,15 @@ function randomParagraph() {
         typingText.innerHTML += spanTag;
     })
 
+    // focus the input field on keydown or click
     document.addEventListener("keydown", () => inputField.focus());
     document.addEventListener("click", () => inputField.focus());
+}
+
+function initTyping(){
+    const character = typingText.querySelectorAll("span");
+    let typedChar = inputField.value.split("")[CharIndex];
+    console.log(typedChar);
 }
 
 inputField.addEventListener("input", initTyping);
