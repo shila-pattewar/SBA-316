@@ -20,4 +20,4 @@ function randomParagraph(){
 randomParagraph();
 
 let randIndex = Math.floor(Math.random()* paragraphs.length);
-console.log(paragraphs[randIndex]);
+console.log(paragraphs[randIndex].split(""));
