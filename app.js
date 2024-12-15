@@ -1,19 +1,28 @@
 const paragraphs = [ 
-    "Sed sed libero ut sapien sollicitudin vestibulum. Nam gravida tincidunt tortor, non tristique odio dictum in. Pellentesque euismod felis et urna varius, at vestibulum lorem maximus. Cras egestas interdum metus, id sollicitudin orci.",
+    "Gratitude is the practice of acknowledging and appreciating the good things in life, and it is essential to cultivating a sense of joy and contentment. Whether it's expressing gratitude for small acts of kindness or for the simple pleasures of life, gratitude can bring a sense of peace and happiness to our lives.",
     
-    "Phasellus id dolor eget risus feugiat consequat. Vestibulum a vestibulum tortor. In condimentum sapien vel est volutpat, at tempor leo suscipit. Nullam ut efficitur felis, ac mollis odio. Ut aliquam mi sit amet leo feugiat, at laoreet leo auctor.",
+    "Honesty is a virtue that is essential to building trust and maintaining healthy relationships. Whether it's being honest with oneself or with others, speaking the truth is always the best course of action.",
     
-    "Curabitur convallis lectus ut orci pharetra, at aliquet nunc porttitor. Proin ut urna eu erat interdum auctor eget ac enim. Nulla facilisi. Donec nec suscipit leo, et tristique libero. Nam tristique sollicitudin tortor et tincidunt.",
+    "Self-awareness is the ability to understand our thoughts, feelings, and behaviors, and it is essential to personal growth and development. Whether it's reflecting on our strengths and weaknesses, seeking feedback from others, or practicing mindfulness, self-awareness can help us make more intentional and informed choices in our lives.",
     
-    "Vivamus eget metus sit amet felis tempor egestas. Sed interdum, augue sit amet sollicitudin feugiat, justo lorem blandit lectus, id lobortis elit eros a ligula. Aliquam erat volutpat. Fusce malesuada purus eu est interdum, at posuere arcu tempus. Nunc lacinia auctor neque ac eleifend.",
+    "Forgiveness is the act of letting go of resentment and bitterness towards others, and it is essential to building healthy and fulfilling relationships. Whether it's extending forgiveness to others, seeking forgiveness for our own mistakes, or simply letting go of negative emotions, forgiveness can foster a sense of peace and well-being in our lives.",
     
-    "Proin a ligula vel ipsum varius facilisis. Curabitur nec augue ut orci tincidunt sollicitudin. Nulla facilisi. Ut nec libero a sapien varius pretium. In cursus, ipsum eget consectetur gravida, lorem turpis efficitur elit, eu varius nisi nunc non felis. Aliquam erat volutpat.",
+    "The development of sustainable urban planning is another important application of technology and nature. Sustainable urban planning prioritizes livability and environmental sustainability, promoting more sustainable and equitable urban development.",
     
-    "Quisque volutpat dui ut auctor congue. Vivamus suscipit fringilla augue, ac gravida metus. Suspendisse potenti. Integer in elit nec nulla lobortis ullamcorper. Etiam vel scelerisque velit. Donec venenatis nisl ut eros faucibus, non condimentum turpis egestas." ];
+    "Creativity is the ability to think outside the box and generate new ideas, and it is essential to innovation and problem-solving. Whether it's experimenting with new approaches, embracing our unique perspectives and talents, or exploring our creative passions, creativity can bring a sense of inspiration and fulfillment to our lives.",
+
+    "The wind was howling outside, rattling the windows and making the branches of the trees sway. I huddled under the blankets, feeling grateful for the warmth and safety of my home.",
+
+    "The development of eco-friendly materials is another important application of technology in nature. By creating sustainable alternatives to traditional materials, we can reduce our impact on the environment and promote more sustainable practices.",
+
+    "Kindness is a simple yet powerful force that has the ability to transform lives. Whether it's through a small act of generosity or a larger show of compassion, every act of kindness has the power to make a positive impact.",
+
+    "Integrity is the practice of living in alignment with our values and beliefs, and it is essential to building trust and respect with others. Whether it's keeping our promises and commitments, speaking and acting authentically, or holding ourselves accountable for our actions and decisions, integrity can help us live with greater purpose and meaning."];
 
 const typingText = document.querySelector(".inputTextArea")
 const inpuField = document.querySelector(".mainContainer .input-field")
 let charIndex = 0;
+
 
 function randomParagraph(){
     console.log(paragraphs[0]);
@@ -24,29 +33,32 @@ randomParagraph();
 function randomParagraph() {
     // get the ramdom paragraphs
     let randIndex = Math.floor(Math.random()* paragraphs.length);
-    paragraphs[randIndex].split("").forEach(span => {
-        let spanTag = `<span>${span}</span>`;
-        typingText.innerHTML += spanTag;
-    })
+    paragraphs[randIndex].split("").forEach(span => 
+        {
+            let spanTag = `<span>${span}</span>`;
+            typingText.innerHTML += spanTag;
+        })
 
-    // focus the input field on click
-    document.addEventListener("click", () => inpuField.focus());
+    document.addEventListener("click", () => inpuField.focus()); 
 }
 
 function initTyping(){
     const character = typingText.querySelectorAll("span");
+    let typedChar = inpuField.value.split("")[charIndex]; //add each input char in new line as new word
 
-    //add each input char in new line as new word
-    let typedChar = inpuField.value.split("")[charIndex];
-    console.log(typedChar);
-    //to check the typed character is matches with original one
-   if (character[charIndex].innerText === typedChar){
-    // if user type the correct character as shown then add the true class else add false class
-    character[charIndex].classList.add("correct");
-   }else{
-    character[charIndex].classList.add("incorrect");
-   }
-   charIndex++; // this will increase the charIndex 
+    console.log(typedChar); //to check the typed character is matches with original one
+    if (character[charIndex].innerText === typedChar) // if user type the correct character as shown then add the true class else add false class
+        { 
+            character[charIndex].classList.add("correct");
+        }
+    else
+        {
+        character[charIndex].classList.add("incorrect");
+        }
+    charIndex++; // this will increase the charIndex 
 }
 
+
 inpuField.addEventListener("input", initTyping);
+
+
