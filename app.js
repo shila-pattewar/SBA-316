@@ -16,7 +16,7 @@ const paragraphs = [
     "The development of eco-friendly materials is another important application of technology in nature. By creating sustainable alternatives to traditional materials, we can reduce our impact on the environment and promote more sustainable practices.",
 
     "Kindness is a simple yet powerful force that has the ability to transform lives. Whether it's through a small act of generosity or a larger show of compassion, every act of kindness has the power to make a positive impact.",
-
+    
     "Integrity is the practice of living in alignment with our values and beliefs, and it is essential to building trust and respect with others. Whether it's keeping our promises and commitments, speaking and acting authentically, or holding ourselves accountable for our actions and decisions, integrity can help us live with greater purpose and meaning."];
 
 const typingText = document.querySelector(".inputTextArea")
@@ -62,3 +62,18 @@ function initTyping(){
 inpuField.addEventListener("input", initTyping);
 
 
+const myDiv = document.getElementById("myDiv");
+
+const button = document.createElement("button");
+button.innerText = "Try Again!";
+
+button.style.backgroundColor = "skyblue";
+button.style.color = "white";
+button.style.padding = "10px 20px";
+button.style.border = "none";
+button.style.borderRadius = "10px";
+button.style.height="10vh";
+
+button.addEventListener("click", randomParagraph);
+
+myDiv.appendChild(button); 
