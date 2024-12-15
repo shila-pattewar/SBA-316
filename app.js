@@ -1,6 +1,6 @@
 const paragraphs = [ 
     "Gratitude is the practice of acknowledging and appreciating the good things in life, and it is essential to cultivating a sense of joy and contentment. Whether it's expressing gratitude for small acts of kindness or for the simple pleasures of life, gratitude can bring a sense of peace and happiness to our lives.",
-    
+
     "Honesty is a virtue that is essential to building trust and maintaining healthy relationships. Whether it's being honest with oneself or with others, speaking the truth is always the best course of action.",
     
     "Self-awareness is the ability to understand our thoughts, feelings, and behaviors, and it is essential to personal growth and development. Whether it's reflecting on our strengths and weaknesses, seeking feedback from others, or practicing mindfulness, self-awareness can help us make more intentional and informed choices in our lives.",
@@ -33,8 +33,7 @@ randomParagraph();
 function randomParagraph() {
     // get the ramdom paragraphs
     let randIndex = Math.floor(Math.random()* paragraphs.length);
-    paragraphs[randIndex].split("").forEach(span => 
-        {
+    paragraphs[randIndex].split("").forEach(span => {
             let spanTag = `<span>${span}</span>`;
             typingText.innerHTML += spanTag;
         })
@@ -68,12 +67,12 @@ const button = document.createElement("button");
 button.innerText = "Try Again!";
 
 button.style.backgroundColor = "skyblue";
-button.style.color = "white";
+button.style.color = "black";
 button.style.padding = "10px 20px";
 button.style.border = "none";
 button.style.borderRadius = "10px";
 button.style.height="10vh";
 
-button.addEventListener("click", randomParagraph);
+button.addEventListener("click", randomParagraph)
 
 myDiv.appendChild(button); 
