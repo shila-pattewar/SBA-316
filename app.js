@@ -75,8 +75,17 @@ button.style.height="10vh";
 
 button.addEventListener("click", function(){
     inpuField.value = ""; 
+    window.location.reload();
 })
 
 myDiv.appendChild(button); 
 
-
+// button.addEventListener("click", function(){
+//     if ( inpuField.value.length >= 1)
+//     {
+//     inpuField.value = ""; 
+//     }
+//     else{
+//         alert("hi");
+//     }
+// })
