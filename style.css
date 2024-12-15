@@ -11,7 +11,6 @@ body{
     border: solid 1px skyblue; 
     border-radius: 10px;  
     background-color: white;
-    box-shadow: 2px 0.1 #c3c3c3;
     width: 100vh;
     padding: 30px;
     font-size: 22px;
@@ -77,3 +76,21 @@ button{
     border: solid 1px #ccc;
     border-radius: 10px;
 }
+
+
+input[type=text] {
+    border: solid 2px skyblue;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 22px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type=text]:focus {
+    border: solid 2px rgb(37, 134, 172);
+  }
