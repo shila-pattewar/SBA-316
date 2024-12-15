@@ -29,8 +29,7 @@ function randomParagraph() {
         typingText.innerHTML += spanTag;
     })
 
-    // focus the input field on keydown or click
-    document.addEventListener("keydown", () => inpuField.focus());
+    // focus the input field on click
     document.addEventListener("click", () => inpuField.focus());
 }
 
@@ -42,11 +41,12 @@ function initTyping(){
     console.log(typedChar);
     //to check the typed character is matches with original one
    if (character[charIndex].innerText === typedChar){
-    console.log("ture");
+    // if user type the correct character as shown then add the true class else add false class
+    character[charIndex].classList.add("correct");
    }else{
-    console.log("flase");
+    character[charIndex].classList.add("incorrect");
    }
-   charIndex++;
+   charIndex++; // this will increase the charIndex 
 }
 
 inpuField.addEventListener("input", initTyping);
