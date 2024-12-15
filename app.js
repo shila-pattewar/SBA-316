@@ -73,6 +73,10 @@ button.style.border = "none";
 button.style.borderRadius = "10px";
 button.style.height="10vh";
 
-button.addEventListener("click", randomParagraph)
+button.addEventListener("click", function(){
+    inpuField.value = ""; 
+})
 
 myDiv.appendChild(button); 
+
+
