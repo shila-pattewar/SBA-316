@@ -1,7 +1,7 @@
 const paragraphs = [ 
     "Gratitude is the practice of acknowledging and appreciating the good things in life, and it is essential to cultivating a sense of joy and contentment. Whether it's expressing gratitude for small acts of kindness or for the simple pleasures of life, gratitude can bring a sense of peace and happiness to our lives.",
 
-    "Honesty is a virtue that is essential to building trust and maintaining healthy relationships. Whether it's being honest with oneself or with others, speaking the truth is always the best course of action.",
+    "Honesty is a virtue that is essential to building trust and maintaining healthy relationships. Whether it's being honest with oneself or with others, speaking the truth is always the best course of action. Honesty is a virtue that is essential to building trust and maintaining healthy relationships. Whether it's being honest with oneself or with others, speaking the truth is always the best course of action.",
     
     "Self-awareness is the ability to understand our thoughts, feelings, and behaviors, and it is essential to personal growth and development. Whether it's reflecting on our strengths and weaknesses, seeking feedback from others, or practicing mindfulness, self-awareness can help us make more intentional and informed choices in our lives.",
     
@@ -23,11 +23,6 @@ const typingText = document.querySelector(".inputTextArea")
 const inpuField = document.querySelector(".mainContainer .input-field")
 let charIndex = 0;
 
-
-function randomParagraph(){
-    console.log(paragraphs[0]);
-}
-
 randomParagraph();
 
 function randomParagraph() {
@@ -39,13 +34,21 @@ function randomParagraph() {
         })
 
     document.addEventListener("click", () => inpuField.focus()); 
+
+    // backspace button will take input back 
+    inpuField.addEventListener('keydown', (event) => { 
+        if (key === "Backspace" || key === "Delete") {
+            return false;
+        }
+    });
+
 }
 
 function initTyping(){
     const character = typingText.querySelectorAll("span");
     let typedChar = inpuField.value.split("")[charIndex]; //add each input char in new line as new word
 
-    console.log(typedChar); //to check the typed character is matches with original one
+    console.log(typedChar); //to check the typed character is matches with original one incuding upper and lowercase
     if (character[charIndex].innerText === typedChar) // if user type the correct character as shown then add the true class else add false class
         { 
             character[charIndex].classList.add("correct");
@@ -64,7 +67,7 @@ inpuField.addEventListener("input", initTyping);
 const myDiv = document.getElementById("myDiv");
 
 const button = document.createElement("button");
-button.innerText = "Try Again!";
+button.innerText = "RESET";
 
 button.style.backgroundColor = "skyblue";
 button.style.color = "black";
@@ -74,8 +77,8 @@ button.style.borderRadius = "10px";
 button.style.height="10vh";
 
 button.addEventListener("click", function(){
-    inpuField.value = ""; 
-    window.location.reload();
+    //inpuField.value = "";  // clear only inputtext
+    window.location.reload(); // clear input text and reload the new paragraph
 })
 
 myDiv.appendChild(button); 
