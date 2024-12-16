@@ -42,6 +42,7 @@ function randomParagraph() {
         }
     });
 
+
 }
 
 function initTyping(){
